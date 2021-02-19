@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import NavBar from './components/Navbar/Navbar';
-import Tasklist from './components/Tasklist/Tasklist';
+import NavBar from './components/Navbar';
+import Container from './components/Container';
+import Tasklist from './components/Tasklist';
 
 let idAcc = 0;
 const generateID = () => {
@@ -44,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <div class="container">
+      <Container>
         <Tasklist 
           title="pendente" 
           taskState="Pendente"
@@ -69,7 +70,7 @@ function App() {
           onTaskUpdate={updateTask}
           onDeleteTask={deleteTask}
         />
-      </div>
+      </Container>
     </div>
   );
 }

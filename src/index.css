@@ -22,11 +22,6 @@ body {
   box-sizing: inherit;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .App {
   font-family: sans-serif;
   background-color: #ededed;
@@ -35,12 +30,11 @@ img {
   color: #fff;
 }
 
-.App .container {
-  width: 100%;
-  max-width: 880px;
-  margin: 40px auto;
-  padding: 8px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px;
+h1 {
+  font-size: 16px;
+  padding: 4px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #4e4e4e;
 }

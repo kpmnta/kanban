@@ -1,7 +1,16 @@
 import React from 'react';
-import "./tasklist.css"
+import styled from 'styled-components';
 import PropTypes from "prop-types";
-import Taskitem from '../Taskitem/Taskitem'
+import Taskitem from '../Taskitem';
+import Content from '../Content';
+import Button from '../Button';
+import EmptyList from '../EmptyList';
+
+const TaskListContainer = styled.div`
+    padding: 8px;
+    background-color: #FFF;
+    border-radius: 2px;
+`;
 
 export default function Tasklist({ title, onAddTask, tasks, onTaskUpdate, taskState, onDeleteTask }) {
     const addTask = () => {
@@ -9,9 +18,9 @@ export default function Tasklist({ title, onAddTask, tasks, onTaskUpdate, taskSt
     }
 
     return(
-        <div className="tasklist">
-            <div className="title">{title}</div>
-            <div className="content">
+        <TaskListContainer>
+            <h1>{title}</h1>
+            <Content>
                 {tasks.map((task) => {
                     return (
                         <Taskitem 
@@ -24,10 +33,10 @@ export default function Tasklist({ title, onAddTask, tasks, onTaskUpdate, taskSt
                         />
                     )
                 })}
-                {tasks.length === 0 && <div className="empty-list">Lista Vazia</div>}
-            <button onClick={ addTask }>adicione uma tarefa</button>
-            </div>
-        </div>
+                {tasks.length === 0 && <EmptyList>Lista Vazia</EmptyList>}
+            <Button onClick={ addTask }>adicione uma tarefa</Button>
+            </Content>
+        </TaskListContainer>
     )
 }
 
